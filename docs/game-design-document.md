@@ -111,6 +111,7 @@ The commander/base layer and the character item economy are deliberately bridged
 - **God Mode is gated by ownership, not by design walls.** A player's God Mode view only shows and commands the minions (characters) they currently own. A brand-new player with no minions has nothing to command yet, so commanding is never something that needs to be force-taught up front — it's discovered organically as a player's roster grows.
 - **Minions and characters are the same roster.** The units a player commands in God Mode are the same ownable, tradeable characters covered in Character Progression & Economy — there is no separate abstract "RTS unit" pool distinct from possessable characters.
 - **Total loss recovery is anchored at the friendly zone.** If a player loses every minion they own, their only path forward is to return to their spawn point inside the friendly zone and possess a new one there — this is the guaranteed free replacement character in practice.
+- **No grace period.** The instant a player leaves the friendly zone, full stakes apply — same permanent death and full-loot rules as everyone else. There is no reduced-risk window for newcomers; the friendly zone itself is the only safety net, and stepping out of it is a real, deliberate choice.
 
 ## Setting
 
@@ -124,8 +125,7 @@ These came up during discovery and are worth resolving before/during prototyping
 - What is the comfort/safety plan for sustained physical exertion in VR (session length limits, warnings, seated fallback)?
 - World size/persistence: is progress/loot permanent across sessions? How do players (re)join an open world?
 - What happens to a possessed unit's AI behavior in the moments right after the player drops out of it?
-- Should a new player get any temporary protection/grace period the first time they leave the friendly zone into full-stakes PvP, or do full rules apply immediately? (Raised but not yet resolved.)
-- Griefing/spawn-camping mitigation given full-loot, no-rules PvP.
+- Griefing/spawn-camping mitigation given full-loot, no-rules PvP and no new-player grace period — this carries more weight now that newcomers get zero cushion stepping out of the friendly zone.
 - Is there death-safe storage (a bank/stash) for un-equipped valuables, and can it also be raided/stolen, or is it fully safe?
 - What does the guaranteed free replacement character start with — bare, or some baseline gear/stats?
 - Is a character's reputation/history portable when traded/sold, or does it reset/attach to the new owner?
