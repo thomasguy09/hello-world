@@ -58,7 +58,7 @@ The intent is a game that punishes players for being both tactically sloppy and 
 - **No formal match structure, rounds, or lobbies** — the game world is a persistent open-world sandbox.
 - **PvP is unrestricted in the wider world** ("no rules") — players can engage any other player's forces at any time outside friendly zones.
 - **Permanent loss on death:** when a player's possessed character dies in PvP, that character (and whatever it has equipped) is gone for good; the victor takes its loot. Death carries real, permanent stakes.
-- **Guaranteed fallback:** every player always has one free replacement character available, so permanent loss never fully locks a player out of the game.
+- **Guaranteed fallback:** every player always has one free character slot. Losing that character is never a dead end — it's replaced with a new free one every time, so permanent loss never fully locks a player out of the game. A second (or further) simultaneous character costs gold to acquire — the free replacement only ever covers a single slot.
 
 This is closer to a survival/looter sandbox (e.g., DayZ-style stakes) layered on top of RTS-style army command and VR embodiment, rather than a traditional round-based RTS or MOBA.
 
@@ -108,7 +108,7 @@ The commander/base layer and the character item economy are deliberately bridged
 ## Onboarding
 
 - **Sandbox-first.** No explicit guided tutorial content for mechanics, strategy, or systems — players discover the game by playing it. Guided help is limited strictly to movement and interface basics (VR locomotion, how to interact with menus/gestures), never to teaching strategy or systems.
-- **God Mode is gated by ownership, not by design walls.** A player's God Mode view only shows and commands the minions (characters) they currently own. A brand-new player with no minions has nothing to command yet, so commanding is never something that needs to be force-taught up front — it's discovered organically as a player's roster grows.
+- **God Mode is gated by ownership, not by design walls.** A player's God Mode view only shows and commands the minions (characters) they currently own. A brand-new player starts with just their one free character — nothing to command yet in God Mode — so commanding is never something that needs to be force-taught up front. Growing a roster beyond that first free character costs gold, so God Mode naturally becomes relevant only once a player has chosen to invest in it.
 - **Minions and characters are the same roster.** The units a player commands in God Mode are the same ownable, tradeable characters covered in Character Progression & Economy — there is no separate abstract "RTS unit" pool distinct from possessable characters.
 - **Total loss recovery is anchored at the friendly zone.** If a player loses every minion they own, their only path forward is to return to their spawn point inside the friendly zone and possess a new one there — this is the guaranteed free replacement character in practice.
 - **No grace period.** The instant a player leaves the friendly zone, full stakes apply — same permanent death and full-loot rules as everyone else. There is no reduced-risk window for newcomers; the friendly zone itself is the only safety net, and stepping out of it is a real, deliberate choice.
@@ -121,7 +121,8 @@ The commander/base layer and the character item economy are deliberately bridged
 
 These came up during discovery and are worth resolving before/during prototyping:
 
-- How many minions can a player command/own at once, and how are they acquired beyond the friendly-zone starting one (spawned, recruited, captured)?
+- Is there a cap on how many additional (paid) minions a player can own at once, or is it unbounded as long as they have the gold?
+- Does the gold cost for an additional character scale (each one more expensive than the last), or is it a flat price per slot?
 - What is the comfort/safety plan for sustained physical exertion in VR (session length limits, warnings, seated fallback)?
 - World size/persistence: is progress/loot permanent across sessions? How do players (re)join an open world?
 - What happens to a possessed unit's AI behavior in the moments right after the player drops out of it?
