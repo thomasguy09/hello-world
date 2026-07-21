@@ -67,6 +67,18 @@ A key design goal: characters themselves become valuable, tradeable commodities 
 
 **Trading:** players can transfer characters and items to each other both directly (in-world, player-to-player) and through a persistent market/auction hub, supporting both opportunistic field trades and broader commerce.
 
+## RTS Economy & Crafting
+
+The commander/base layer and the character item economy are deliberately bridged rather than kept separate, so the two dominant playstyles (macro commanders and first-person adventurers) need each other:
+
+- **Shared resource pool.** Gold/lumber-style base resources fund *both* unit training and gear crafting/refinement from the same pool. A commander choosing to invest in crafting is a commander not spending on army size — a real strategic tradeoff each session, not two parallel currencies.
+- **Origin of rarity stays in the world.** Rare items and traits are never conjured purely from base resources — they still only come from combat, exploration, and drops — so scarcity established in Character Progression & Economy holds. Base resources are spent to repair, upgrade, socket, or combine gear that was already found, not to manufacture best-in-slot items from scratch. This is what makes adventurers (bringing in raw finds) and commanders (able to refine them) mutually dependent.
+- **Base zoning: safe and unsafe areas.** A base is not uniformly safe or uniformly raidable — some core area is protected, while outposts, expansions, and exposed stockpiles are fully raidable and lootable. This extends full-loot PvP stakes into the strategic layer without exposing commanders to total, instant wipeout.
+- **Crafting supports both active and passive play:**
+  - **Active/physical crafting** — a hands-on VR minigame or gesture-driven process, keeping the physicality pillar present even in the economic layer, likely rewarded with better speed/quality/yield than passive crafting.
+  - **Passive/queued crafting** — classic RTS-style production queues that run automatically once resources are committed, for when the player isn't actively at the base.
+  - **Macros** — once a player has manually performed a crafting action, they can record/automate it, converting demonstrated skill/mastery into repeatable automation over time rather than requiring the physical minigame forever.
+
 ## Setting
 
 - **Fantasy.** Chosen partly for design reasons beyond aesthetics: a fantasy setting was judged to make ability/spell-based mechanics more forgiving and flexible for a choice-driven game, while still supporting physically active combat (melee, casting, dodging).
@@ -85,7 +97,9 @@ These came up during discovery and are worth resolving before/during prototyping
 - What does the guaranteed free replacement character start with — bare, or some baseline gear/stats?
 - Is a character's reputation/history portable when traded/sold, or does it reset/attach to the new owner?
 - How are rarity/traits generated for a new character — procedural generation, drop tables, crafting, or a mix?
-- Does the RTS commander economy (resources, base-building) feed into the same item economy that possessed characters loot/wear, or are they separate systems?
+- What exactly defines a base's safe vs. unsafe zones — fixed geography, an upgrade path players invest in, defenses/guards, or some combination?
+- Can safe zones ever be worn down over time (e.g., a siege mechanic), or are they permanently protected regardless of assault?
+- Does macro-automated crafting yield less than manual/active crafting (a real tradeoff), or is it purely a time-convenience with no quality cost?
 
 ## Suggested Next Steps
 
