@@ -56,11 +56,17 @@ The intent is a game that punishes players for being both tactically sloppy and 
 ## Multiplayer Structure: Open-World Sandbox PvP
 
 - **No formal match structure, rounds, or lobbies** — the game world is a persistent open-world sandbox.
-- **PvP is unrestricted** ("no rules") — players can engage any other player's forces at any time.
+- **PvP is unrestricted in the wider world** ("no rules") — players can engage any other player's forces at any time outside friendly zones.
 - **Permanent loss on death:** when a player's possessed character dies in PvP, that character (and whatever it has equipped) is gone for good; the victor takes its loot. Death carries real, permanent stakes.
 - **Guaranteed fallback:** every player always has one free replacement character available, so permanent loss never fully locks a player out of the game.
 
 This is closer to a survival/looter sandbox (e.g., DayZ-style stakes) layered on top of RTS-style army command and VR embodiment, rather than a traditional round-based RTS or MOBA.
+
+### Friendly Zones vs. The Dangerous World
+
+Every player starts the game in first person (Possession Mode) inside a friendly zone — a systemic, world-provided safe area, not something a player builds. Friendly zones are PvP-free and let players trade, do low-stakes crafting, and simply exist without risking permanent loss.
+
+Everything outside friendly zones is the dangerous world: full-loot PvP, raidable player bases, and sieges. This is a deliberate spectrum, not a forced funnel — a risk-averse or casual player can choose to spend most of their time in friendly zones (consistent with most casual players mainly wanting the first-person experience), while risk-tolerant players venture out to build the deeper base/character economy where the real stakes and rewards live.
 
 ## Character Progression & Economy
 
@@ -92,7 +98,8 @@ The commander/base layer and the character item economy are deliberately bridged
 
 - **Shared resource pool.** Gold/lumber-style base resources fund *both* unit training and gear crafting/refinement from the same pool. A commander choosing to invest in crafting is a commander not spending on army size — a real strategic tradeoff each session, not two parallel currencies.
 - **Origin of rarity stays in the world.** Rare items and traits are never conjured purely from base resources — they still only come from combat, exploration, and drops — so scarcity established in Character Progression & Economy holds. Base resources are spent to repair, upgrade, socket, or combine gear that was already found, not to manufacture best-in-slot items from scratch. This is what makes adventurers (bringing in raw finds) and commanders (able to refine them) mutually dependent.
-- **Base zoning: safe and unsafe areas.** A base is not uniformly safe or uniformly raidable — some core area is protected, while outposts, expansions, and exposed stockpiles are fully raidable and lootable. This extends full-loot PvP stakes into the strategic layer without exposing commanders to total, instant wipeout.
+- **Base zoning: safe and unsafe areas.** Outside of the systemic friendly zones (see Multiplayer Structure), nothing is automatically or permanently safe — safety is earned, using the same shared resource pool that also funds units and crafting, making defense a third real tradeoff each session. The one exception is a bare-minimum, un-destroyable core per base (just a respawn/binding point, nothing else) — mirroring the guaranteed free replacement character — so a wiped-out base is a severe setback, never a permanent lockout. Everything beyond that core (stockpiles, crafting stations, outposts) is only as safe as what's actually been built to defend it.
+- **Sieges support both styles of play.** An attacker can commit in real time to actively break a base's defenses, or set a siege running and leave it grinding passively, mirroring the active/passive split in crafting below. This lets players self-select their risk appetite: some will stay almost entirely within friendly zones, others will venture into the dangerous world and commit to bases, raids, and sieges.
 - **Crafting supports both active and passive play:**
   - **Active/physical crafting** — a hands-on VR minigame or gesture-driven process, keeping the physicality pillar present even in the economic layer, likely rewarded with better speed/quality/yield than passive crafting.
   - **Passive/queued crafting** — classic RTS-style production queues that run automatically once resources are committed, for when the player isn't actively at the base.
@@ -116,13 +123,14 @@ These came up during discovery and are worth resolving before/during prototyping
 - What does the guaranteed free replacement character start with — bare, or some baseline gear/stats?
 - Is a character's reputation/history portable when traded/sold, or does it reset/attach to the new owner?
 - How are rarity/traits generated for a new character — procedural generation, drop tables, crafting, or a mix?
-- What exactly defines a base's safe vs. unsafe zones — fixed geography, an upgrade path players invest in, defenses/guards, or some combination?
-- Can safe zones ever be worn down over time (e.g., a siege mechanic), or are they permanently protected regardless of assault?
 - Does macro-automated crafting yield less than manual/active crafting (a real tradeoff), or is it purely a time-convenience with no quality cost?
 - How does lending/shared control work mechanically — a revocable-at-will toggle, a timed loan, a rental market with fees?
 - If control is shared between multiple players, how is conflict resolved (turns, a designated primary, simultaneous input)?
 - Does a character's spell tree get fixed at trade/capture, or can a new owner respec it?
 - Are personality traits (loyal/volatile/independent) purely flavor-with-behavior, or do they also factor into a character's rarity/value?
+- Is a base defense manned by a possessed player (actively fighting off raiders) meaningfully stronger than the same defense left automated/unmanned, or are turrets/walls equally effective either way? (Raised but not yet resolved — relevant to how strongly the individual-vs-manager theme plays out in base defense.)
+- Where are friendly zones located relative to player bases — are bases only buildable in the dangerous world, or can they be sited near friendly zones for partial safety-by-proximity?
+- What specifically can be built to defend a base (walls, turrets, traps, terrain) and how does their cost scale against raw siege-breaking power?
 
 ## Suggested Next Steps
 
