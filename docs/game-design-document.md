@@ -37,7 +37,7 @@ This maps directly onto the game's two modes. Playing as **the individual** (Pos
 There is no artificial cost, cooldown, or resource gate on switching between modes — the player can fully possess a unit or pull back to god-mode management freely. Instead, three organic pressures create a "dive and recover" rhythm and keep God Mode meaningful even for players who mostly want to stay possessed:
 
 - **Physical fatigue.** Possession Mode already demands sustained real exertion (arm-shuffle movement, cardio-gated casting, real dodging). As in-game stamina depletes from that exertion, the possessed unit's dodge speed and cast power degrade, eventually forcing a retreat to God Mode to recover.
-- **Tunnel vision.** While possessed, the player only sees/hears what that unit senses — no minimap, no awareness of the rest of the board. Threats to other units, the base, or valuables can only be spotted from God Mode.
+- **Fog of war exists wherever your minions don't.** Visibility, in either mode, is limited to where your own characters/minions currently are — there's no omniscient map even in God Mode. While possessed, this collapses further to just what that one unit senses, no minimap or awareness of the rest of the board. Threats to unattended minions, the base, or valuables can only be spotted by having eyes (a minion) near them.
 - **Passive AI.** Unpossessed units defend themselves and hold formation but never proactively expand, reposition, or seize opportunities — a steady tax on staying possessed too long against an actively-directed opponent.
 
 This is deliberately soft — casual players who mostly want to stay in first person as one character are expected and supported (see Character Progression & Economy below); the pressures above matter most for players trying to run a broader strategic game.
@@ -105,6 +105,13 @@ The commander/base layer and the character item economy are deliberately bridged
   - **Passive/queued crafting** — classic RTS-style production queues that run automatically once resources are committed, for when the player isn't actively at the base.
   - **Macros** — once a player has manually performed a crafting action, they can record/automate it, converting demonstrated skill/mastery into repeatable automation over time rather than requiring the physical minigame forever.
 
+## Onboarding
+
+- **Sandbox-first.** No explicit guided tutorial content for mechanics, strategy, or systems — players discover the game by playing it. Guided help is limited strictly to movement and interface basics (VR locomotion, how to interact with menus/gestures), never to teaching strategy or systems.
+- **God Mode is gated by ownership, not by design walls.** A player's God Mode view only shows and commands the minions (characters) they currently own. A brand-new player with no minions has nothing to command yet, so commanding is never something that needs to be force-taught up front — it's discovered organically as a player's roster grows.
+- **Minions and characters are the same roster.** The units a player commands in God Mode are the same ownable, tradeable characters covered in Character Progression & Economy — there is no separate abstract "RTS unit" pool distinct from possessable characters.
+- **Total loss recovery is anchored at the friendly zone.** If a player loses every minion they own, their only path forward is to return to their spawn point inside the friendly zone and possess a new one there — this is the guaranteed free replacement character in practice.
+
 ## Setting
 
 - **Fantasy.** Chosen partly for design reasons beyond aesthetics: a fantasy setting was judged to make ability/spell-based mechanics more forgiving and flexible for a choice-driven game, while still supporting physically active combat (melee, casting, dodging).
@@ -113,11 +120,11 @@ The commander/base layer and the character item economy are deliberately bridged
 
 These came up during discovery and are worth resolving before/during prototyping:
 
-- How many units can a player command/own at once, and how are they acquired (spawned, built, recruited)?
+- How many minions can a player command/own at once, and how are they acquired beyond the friendly-zone starting one (spawned, recruited, captured)?
 - What is the comfort/safety plan for sustained physical exertion in VR (session length limits, warnings, seated fallback)?
 - World size/persistence: is progress/loot permanent across sessions? How do players (re)join an open world?
 - What happens to a possessed unit's AI behavior in the moments right after the player drops out of it?
-- Onboarding: this combines two genres (RTS + embodied VR combat) that are unfamiliar together — how is this taught to a new player?
+- Should a new player get any temporary protection/grace period the first time they leave the friendly zone into full-stakes PvP, or do full rules apply immediately? (Raised but not yet resolved.)
 - Griefing/spawn-camping mitigation given full-loot, no-rules PvP.
 - Is there death-safe storage (a bank/stash) for un-equipped valuables, and can it also be raided/stolen, or is it fully safe?
 - What does the guaranteed free replacement character start with — bare, or some baseline gear/stats?
