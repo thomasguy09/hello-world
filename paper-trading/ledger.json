@@ -1,0 +1,15 @@
+{
+  "currency": "USD",
+  "funded_date": "2026-08-02",
+  "starting_cash": 1000.0,
+  "cash": 1000.0,
+  "positions": [],
+  "closed_trades": [],
+  "marks": [],
+  "benchmark": {
+    "symbol": "SPY",
+    "note": "Buy-and-hold comparison. Entry price recorded on the first trading session.",
+    "entry_price": null,
+    "entry_date": null
+  }
+}
