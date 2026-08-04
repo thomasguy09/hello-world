@@ -2,14 +2,47 @@
   "currency": "USD",
   "funded_date": "2026-08-02",
   "starting_cash": 1000.0,
-  "cash": 1000.0,
-  "positions": [],
+  "cash": 500.0,
+  "positions": [
+    {
+      "symbol": "NVDA",
+      "shares": 1.1976,
+      "entry_price": 208.74,
+      "entry_date": "2026-08-04",
+      "entry_basis": "day high observed 2026-08-04 intraday; deliberately conservative, see log.md",
+      "cost": 249.99,
+      "sources": [
+        "https://www.cnbc.com/quotes/NVDA",
+        "https://www.fxleaders.com/news/2026/08/04/nvidia-stock-forecast-today-nvda-reclaims-210-as-ai-demand-outweighs-financing-concerns/"
+      ],
+      "corroboration": "two independent searches agreed: ~206.65 last, 200.75 prior close (2026-08-03), day range 196.85-208.74"
+    },
+    {
+      "symbol": "QQQM",
+      "shares": 0.8478,
+      "entry_price": 294.89,
+      "entry_date": "2026-08-04",
+      "entry_basis": "day high observed 2026-08-04 10:38 EDT; deliberately conservative, see log.md",
+      "cost": 250.01,
+      "sources": [
+        "https://stockanalysis.com/etf/qqqm/",
+        "https://www.nasdaq.com/market-activity/etf/qqqm"
+      ],
+      "corroboration": "internally consistent single source: last 294.53 @ 10:38 EDT, prior close 288.27, open 291.63, day range 291.36-294.89"
+    }
+  ],
   "closed_trades": [],
   "marks": [],
   "benchmark": {
     "symbol": "SPY",
-    "note": "Buy-and-hold comparison. Entry price recorded on the first trading session.",
-    "entry_price": null,
-    "entry_date": null
-  }
+    "note": "Buy-and-hold comparison. Entry taken at the same conservative day-high basis as the positions, so both sides of the comparison carry the same bias.",
+    "entry_price": 768.09,
+    "entry_date": "2026-08-04",
+    "sources": [
+      "https://www.cnbc.com/quotes/SPY",
+      "https://stockanalysis.com/etf/spy/"
+    ],
+    "corroboration": "last 767.77, prior close 757.67, day range 760.52-768.09, 52wk high 768.09 (consistent with reported record-high tape)"
+  },
+  "undeployed_note": "50% cash is a consequence of data quality, not a strategy choice. MSFT and DAL were rejected as unpriceable. See log.md."
 }
