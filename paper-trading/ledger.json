@@ -6,11 +6,19 @@
   "positions": [
     {
       "symbol": "NVDA",
-      "shares": 1.1976,
-      "entry_price": 208.74,
+      "shares": 1.1821,
+      "entry_price": 211.48,
       "entry_date": "2026-08-04",
-      "entry_basis": "day high observed 2026-08-04 intraday; deliberately conservative, see log.md",
+      "entry_basis": "CORRECTED 2026-08-04 16:10 ET. Original entry used 2026-08-03 data by mistake; see corrections below.",
       "cost": 249.99,
+      "correction": {
+        "superseded_entry_price": 208.74,
+        "superseded_shares": 1.1976,
+        "reason": "The quotes used at entry (last ~206.65, range 196.85-208.74, open 197.69) were the 2026-08-03 session, not 2026-08-04. NVDA closed 206.70 on 08-03. On 08-04 it traded ~211.48. The 'conservative day high' was therefore the PRIOR day's high, which flattered the entry by ~1.3% instead of penalizing it.",
+        "detected_by": "post-close reconciliation: '+2.3% to 211.48 after +2.9% the previous session' only reconciles if 206.70 was the 08-03 close",
+        "residual_uncertainty": "211.48 is described as an early-08-04 trade, not the 08-04 high. The true conservative basis is likely higher still, so this correction may not go far enough.",
+        "tool_gap": "verify.py compares prices across sources but does not check the AS-OF DATE. Two sources both quoting a stale session agree perfectly and pass."
+      },
       "sources": [
         "https://www.cnbc.com/quotes/NVDA",
         "https://www.fxleaders.com/news/2026/08/04/nvidia-stock-forecast-today-nvda-reclaims-210-as-ai-demand-outweighs-financing-concerns/"
@@ -32,7 +40,26 @@
     }
   ],
   "closed_trades": [],
-  "marks": [],
+  "marks": [
+    {
+      "date": "2026-08-04",
+      "observed_at": "16:10 ET",
+      "status": "INCOMPLETE — position closes not yet published",
+      "SPY": {
+        "close": 771.77,
+        "source": "https://stockanalysis.com/etf/spy/history/",
+        "corroboration": "757.67 prior close -> 771.77 is +1.86%, consistent with the reported +1.8% index move. A '+0.13 (0.02%)' figure in the same summary is inconsistent and was discarded."
+      },
+      "NVDA": {
+        "close": null,
+        "note": "Not published as of 16:10 ET. Searches returned 2026-07-31 and 2026-08-03 data. Last 08-04 observation was ~211.48 in early trading, which is not a close."
+      },
+      "QQQM": {
+        "close": null,
+        "note": "Not published as of 16:10 ET. Searches returned 2026-08-03 data (288.11 last, 283.29 prior close)."
+      }
+    }
+  ],
   "benchmark": {
     "symbol": "SPY",
     "note": "Buy-and-hold comparison. Entry taken at the same conservative day-high basis as the positions, so both sides of the comparison carry the same bias.",

@@ -86,3 +86,56 @@ good.
 I expect this to land within roughly ±1.5% of SPY, dominated by noise rather
 than by anything in the reasoning above. Committed before the close so it can be
 checked.
+
+## 2026-08-04 — Session 1 (post-close, INCOMPLETE)
+
+Checked at 16:10 ET. No P&L is recorded because none can be computed honestly.
+
+### Error found: the NVDA entry was a day stale
+
+The quotes used to enter NVDA at 13:05 — last ~206.65, prior close 200.75,
+range 196.85-208.74, open 197.69 — were the **2026-08-03** session, not 08-04.
+
+The reconciliation that exposed it: a post-close source reported NVDA
+"+2.3% to 211.48 after climbing 2.9% in the previous session." That only works
+if ~206.70 was Monday's close. A direct check confirmed NVDA closed 206.70 on
+2026-08-03.
+
+So the "conservative day high" of 208.74 was **Monday's** high. The whole point
+of that haircut was to make lag bias against the strategy. Applied to the wrong
+day, it did the opposite — roughly 1.3% of gain on that position that never
+existed. Entry corrected to 211.48, shares 1.1976 -> 1.1821. The original values
+are preserved in ledger.json under positions[].correction.
+
+The correction may still be too generous: 211.48 was an early-session trade, not
+08-04's high, and the true conservative basis is probably higher.
+
+### verify.py has a hole
+
+It compares prices *across sources* and passes anything agreeing within 0.75%.
+It never checks the **as-of date**. Two sources both quoting a stale session
+agree perfectly and pass clean. That is exactly what happened here — and it
+happened three hours after the tool was written and validated "4 for 4" against
+the same day's decisions.
+
+The lesson is not that the tolerance was wrong. It is that the tool tested the
+thing that was easy to test, and the actual failure came in through the
+dimension nobody instrumented.
+
+### QQQM: basis holds, but partial
+
+QQQM's entry data was genuinely 08-04 — its stated prior close of 288.27 matches
+Monday's 288.11 close. The basis is sound. But the 294.89 "day high" was
+observed at 10:38 ET and the tape kept rallying all afternoon, so the real
+08-04 high is likely higher. Same direction of flattery, smaller magnitude.
+
+### What is actually known
+
+- **SPY closed 771.77**, +1.86% from 757.67, consistent with the reported +1.8%
+  index move to a record.
+- **NVDA and QQQM closes were not published** as of 16:10 ET. Searches returned
+  07-31 and 08-03 data.
+
+No P&L. Marking two of three legs with prices from the wrong day is what caused
+this entry to be wrong in the first place, and doing it again to produce a number
+on demand would be the same mistake with more confidence attached.
